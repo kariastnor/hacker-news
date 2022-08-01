@@ -16,9 +16,9 @@ function Stories() {
             <a href={url} target="_blank" rel="noreferrer">
               {title}
             </a>
-            <h5>
+            <p>
               By {author} | <span>From {dateFormatted}</span>
-            </h5>
+            </p>
           </article>
         );
       })}

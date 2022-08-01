@@ -15,6 +15,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -23,6 +24,103 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+main {
+  position: relative;
+}
+
+h1 {
+  color: #B93160;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 3rem;
+}
+
+.search-form input {
+  border: solid 1px rgb(207, 207, 207);
+  margin: 0 1rem;
+  padding: 0.5rem;
+}
+
+button {
+  background-color: #B93160;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-family: -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  height: fit-content;
+  padding: 0.5rem;
+}
+
+a {
+  color: #c74f79;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+article p {
+  margin-bottom: 1.7rem;
+  margin-top: 0.3rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  width: 200px;
+}
+
+.heading {
+  display: grid;
+  /* align-items: center; */
+  grid-template-columns: 1fr 98px;
+  column-gap: 10px;
+}
+
+.heading h1 {
+  /* Add margin left to counter-act dark mode fragment, so that title is centralised */
+  margin-left: 98px;
+}
+
+/* DARK MODE TOGGLE BUTTON */
+.dark-mode-toggle {
+  /* position: absolute;
+  top: 0;
+  right: 20px; */
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+.dark-mode-toggle p {
+  display: inline-block;
+}
+
+/* @media screen and (max-width: 640px) {
+  .dark-mode-toggle {
+    position: relative;
+    flex-direction: row;
+    margin: auto;
+  }
+} */
 
 /* The switch - the box around the slider */
 .switch {
@@ -65,11 +163,11 @@ code {
 }
 
 input:checked+.slider {
-  background-color: #2196F3;
+  background-color: #B93160;
 }
 
 input:focus+.slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #B93160;
 }
 
 input:checked+.slider:before {

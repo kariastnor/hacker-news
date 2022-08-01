@@ -6,8 +6,8 @@ function SearchForm() {
     useContext(SiteContext);
 
   return (
-    <form onSubmit={(event) => handleSearch(event)}>
-      <label htmlFor="search">Search for articles</label>
+    <form className="search-form" onSubmit={(event) => handleSearch(event)}>
+      <label htmlFor="search">Search for articles: </label>
       <input
         type="text"
         id="search"

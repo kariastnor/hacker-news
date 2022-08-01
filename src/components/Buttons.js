@@ -5,7 +5,7 @@ function Buttons() {
   const { page, nbPages, handlePages } = useContext(SiteContext);
 
   return (
-    <div>
+    <div className="buttons">
       <button type="button" onClick={handlePages}>
         Prev
       </button>
