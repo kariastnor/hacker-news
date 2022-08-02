@@ -6,15 +6,17 @@ function SearchForm() {
     useContext(SiteContext);
 
   return (
-    <form className="search-form" onSubmit={(event) => handleSearch(event)}>
-      <label htmlFor="search">Search for articles: </label>
-      <input
-        type="text"
-        id="search"
-        value={searchTerm}
-        onChange={(event) => handleSearchTerm(event.target.value)}
-      />
-      <button type="submit">Search</button>
+    <form onSubmit={(event) => handleSearch(event)}>
+      <label htmlFor="search">Search for articles:</label>
+      <div className="search-input">
+        <input
+          type="text"
+          id="search"
+          value={searchTerm}
+          onChange={(event) => handleSearchTerm(event.target.value)}
+        />
+        <button type="submit">Search</button>
+      </div>
     </form>
   );
 }

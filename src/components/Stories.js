@@ -6,7 +6,7 @@ function Stories() {
   const { stories } = useContext(SiteContext);
 
   return (
-    <section>
+    <section className="stories">
       {stories.map((story) => {
         const { objectID, created_at, title, url, author } = story;
         const dateFormatted = moment(created_at).format("DD MMMM YYYY");
