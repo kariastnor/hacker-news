@@ -1,11 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@600&family=Source+Code+Pro:wght@700&display=swap');
+
 .light-mode {
-  --background-base: #F0EBE3;
-  --font-base: #2B2B2B;
+  --background-base: rgb(244, 240, 240);
+  --font-base: #1b1b1b;
+  --main-heading: #B93160;
+  --line: #B93160;
+  --button: #B93160;
+  --link: #c74f79;
 }
 
 .dark-mode {
-  --background-base: #2B2B2B;
-  --font-base: #F0EBE3;
+  --background-base: #1b1b1b;
+  --font-base: rgb(244, 240, 240);
+  --main-heading: #7DCE13;
+  --line: #7DCE13;
+  --button: #7DCE13;
+  --link: #6ab40a;
 }
 
 body {
@@ -30,16 +40,29 @@ main {
 }
 
 h1 {
-  color: #B93160;
+  color: var(--main-heading);
+  font-family: 'Red Hat Mono', monospace;
   font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+hr {
+  border: none;
+  background-color: var(--line);
+  height: 1px;
+  width: 100px;
   margin-bottom: 4rem;
 }
 
 form {
+  /* background-color: rgb(220, 217, 217); */
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto 3rem;
+  padding: 20px 30px;
+  width: fit-content;
 }
 
 .search-input {
@@ -50,7 +73,7 @@ form {
 
 .search-input input {
   border: solid 1px rgb(207, 207, 207);
-  margin: 0 1rem 0 0.8rem;
+  margin: 0 1rem 0 0.6rem;
   padding: 0.5rem;
 }
 
@@ -71,7 +94,7 @@ form {
 }
 
 button {
-  background-color: #B93160;
+  background-color: var(--button);
   border: none;
   color: white;
   cursor: pointer;
@@ -91,7 +114,7 @@ button {
 }
 
 a {
-  color: #c74f79;
+  color: var(--link);
   font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
@@ -178,11 +201,11 @@ article p {
 }
 
 input:checked+.slider {
-  background-color: #B93160;
+  background-color: var(--button);
 }
 
 input:focus+.slider {
-  box-shadow: 0 0 1px #B93160;
+  box-shadow: 0 0 1px var(--button);
 }
 
 input:checked+.slider:before {

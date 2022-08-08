@@ -5,7 +5,8 @@ import axios from "axios";
 const SiteContext = createContext();
 
 const searchUrl = "https://hn.algolia.com/api/v1/search?tags=story&query=";
-const frontPageUrl = "https://hn.algolia.com/api/v1/search?tags=front_page";
+const frontPageUrl =
+  "https://hn.algolia.com/api/v1/search_by_date?tags=story&page=0";
 
 const initialState = {
   isLoading: false,
@@ -45,7 +46,11 @@ function AppProvider({ children }) {
   function handleSearch(event) {
     event.preventDefault();
     dispatch({ type: "HANDLE_SEARCH" });
-    fetchStories(`${searchUrl}${state.searchTerm}`);
+    if (state.searchTerm) {
+      fetchStories(`${searchUrl}${state.searchTerm}`);
+    } else {
+      fetchStories(frontPageUrl);
+    }
   }
 
   function handlePages(event) {
@@ -54,7 +59,11 @@ function AppProvider({ children }) {
   }
 
   useEffect(() => {
-    fetchStories(`${searchUrl}${state.searchTerm}&page=${state.page}`);
+    if (state.searchTerm) {
+      fetchStories(`${searchUrl}${state.searchTerm}&page=${state.page}`);
+    } else {
+      fetchStories(frontPageUrl);
+    }
     // eslint-disable-next-line
   }, [state.page]);
 

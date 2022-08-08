@@ -10,11 +10,12 @@ function App() {
   return (
     <main>
       <h1>Hacker News</h1>
+      <hr />
       <div className="dark-mode-toggle">
         <p>Dark mode:</p>
-        <label class="switch">
+        <label className="switch">
           <input onClick={handleDarkMode} type="checkbox" />
-          <span class="slider round"></span>
+          <span className="slider round"></span>
         </label>
       </div>
       <SearchForm />

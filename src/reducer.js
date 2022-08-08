@@ -13,9 +13,13 @@ function reducer(state, action) {
     case "FETCH_ERROR":
       return { ...state, isLoading: false, isError: true };
     case "HANDLE_SEARCHTERM":
-      return { ...state, searchTerm: action.payload, category: "search" };
+      return { ...state, searchTerm: action.payload };
     case "HANDLE_SEARCH":
-      return { ...state, page: 0 };
+      if (state.searchTerm) {
+        return { ...state, page: 0, category: "search" };
+      } else {
+        return { ...state, page: 0, category: "frontPage" };
+      }
     case "HANDLE_PAGE":
       let newPage;
       if (action.payload === "Prev") {
