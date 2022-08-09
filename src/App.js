@@ -3,6 +3,8 @@ import { SiteContext } from "./context";
 import SearchForm from "./components/SearchForm";
 import Stories from "./components/Stories";
 import Buttons from "./components/Buttons";
+import DarkModeToggle from "./components/DarkModeToggle";
+import DarkModeMenu from "./components/DarkModeMenu";
 
 function App() {
   const { isLoading, category, handleDarkMode } = useContext(SiteContext);
@@ -11,13 +13,8 @@ function App() {
     <main>
       <h1>Hacker News</h1>
       <hr />
-      <div className="dark-mode-toggle">
-        <p>Dark mode:</p>
-        <label className="switch">
-          <input onClick={handleDarkMode} type="checkbox" />
-          <span className="slider round"></span>
-        </label>
-      </div>
+      <DarkModeToggle />
+      <DarkModeMenu />
       <SearchForm />
       {isLoading && <h2>Loading stories...</h2>}
       {!isLoading && <Stories />}

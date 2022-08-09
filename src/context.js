@@ -17,6 +17,7 @@ const initialState = {
   stories: [],
   nbPages: 0,
   darkMode: false,
+  openMenu: false,
 };
 
 function AppProvider({ children }) {
@@ -79,6 +80,10 @@ function AppProvider({ children }) {
     }
   }, [state.darkMode]);
 
+  function openDarkModeMenu() {
+    dispatch({ type: "HANDLE_MENU" });
+  }
+
   return (
     <SiteContext.Provider
       value={{
@@ -87,6 +92,7 @@ function AppProvider({ children }) {
         handleSearch,
         handlePages,
         handleDarkMode,
+        openDarkModeMenu,
       }}
     >
       {children}

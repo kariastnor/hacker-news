@@ -37,7 +37,10 @@ function reducer(state, action) {
       return { ...state, page: newPage };
     case "HANDLE_DARK_MODE":
       const newDarkMode = !state.darkMode;
-      return { ...state, darkMode: newDarkMode };
+      return { ...state, darkMode: newDarkMode, openMenu: false };
+    case "HANDLE_MENU":
+      const newState = !state.openMenu;
+      return { ...state, openMenu: newState };
 
     default:
       throw new Error("No matching action type found");
