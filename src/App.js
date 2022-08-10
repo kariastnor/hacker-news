@@ -7,7 +7,7 @@ import DarkModeToggle from "./components/DarkModeToggle";
 import DarkModeMenu from "./components/DarkModeMenu";
 
 function App() {
-  const { isLoading, category, handleDarkMode } = useContext(SiteContext);
+  const { isLoading, category } = useContext(SiteContext);
 
   return (
     <main>
