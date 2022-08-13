@@ -1,3 +1,9 @@
+# What is Hacker News?
+
+This website fetches and displays stories from Algolia's Hacker News Search API, including a title search function. It was created using React, and the finished website is hosted on [https://hacker-news-api-project.netlify.app](https://hacker-news-api-project.netlify.app).
+
+See instructions below from React for how to run the project.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
