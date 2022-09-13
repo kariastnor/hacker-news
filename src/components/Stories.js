@@ -3,10 +3,23 @@ import { SiteContext } from "../context";
 import moment from "moment";
 
 function Stories() {
-  const { stories } = useContext(SiteContext);
+  const { stories, category, sorting, changeSorting } = useContext(SiteContext);
 
   return (
     <section className="stories">
+      {category === "search" && (
+        <div className="sorting">
+          <label htmlFor="sorting">Sort results by:</label>
+          <select
+            id="sorting"
+            value={sorting}
+            onChange={(event) => changeSorting(event.target.value)}
+          >
+            <option value="relevance">Relevance</option>
+            <option value="date">Date (most recent)</option>
+          </select>
+        </div>
+      )}
       {stories.map((story) => {
         const { objectID, created_at, title, url, author } = story;
         const dateFormatted = moment(created_at).format("DD MMMM YYYY");

@@ -12,10 +12,10 @@ function App() {
   return (
     <main>
       <h1>Hacker News</h1>
-      <hr />
       <DarkModeToggle />
       <DarkModeMenu />
       <SearchForm />
+      <hr />
       {isLoading && <h2>Loading stories...</h2>}
       {!isLoading && <Stories />}
       {!isLoading && category === "search" && <Buttons />}

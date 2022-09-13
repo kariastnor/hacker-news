@@ -35,6 +35,21 @@ function reducer(state, action) {
         }
       }
       return { ...state, page: newPage };
+    case "CHANGE_SORTING":
+      return { ...state, sorting: action.payload };
+    case "CHANGE_URL":
+      if (state.sorting === "relevance") {
+        return {
+          ...state,
+          searchUrl: "https://hn.algolia.com/api/v1/search?tags=story&query=",
+        };
+      } else {
+        return {
+          ...state,
+          searchUrl:
+            "https://hn.algolia.com/api/v1/search_by_date?tags=story&query=",
+        };
+      }
     case "HANDLE_DARK_MODE":
       const newDarkMode = !state.darkMode;
       return { ...state, darkMode: newDarkMode, openMenu: false };
