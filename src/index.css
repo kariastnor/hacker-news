@@ -91,7 +91,7 @@ hr {
   font-size: 0.8rem;
   font-weight: 500;
   position: absolute;
-  transform: translateY(-14px);
+  transform: translateY(-13px);
   left: 0.5rem;
 }
 
@@ -105,7 +105,7 @@ hr {
 }
 
 .search.active input {
-  padding-top: 0.5rem;
+  padding-top: 0.9rem;
 }
 
 .search button {
