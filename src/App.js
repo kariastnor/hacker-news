@@ -7,7 +7,7 @@ import DarkModeToggle from "./components/DarkModeToggle";
 import DarkModeMenu from "./components/DarkModeMenu";
 
 function App() {
-  const { isLoading, category } = useContext(SiteContext);
+  const { isLoading, category, stories } = useContext(SiteContext);
 
   return (
     <main>
@@ -18,7 +18,7 @@ function App() {
       <hr />
       {isLoading && <h2>Loading stories...</h2>}
       {!isLoading && <Stories />}
-      {!isLoading && category === "search" && <Buttons />}
+      {!isLoading && category === "search" && stories.length > 0 && <Buttons />}
     </main>
   );
 }

@@ -5,6 +5,10 @@ import moment from "moment";
 function Stories() {
   const { stories, category, sorting, changeSorting } = useContext(SiteContext);
 
+  if (stories.length === 0) {
+    return <p>No results found</p>;
+  }
+
   return (
     <section className="stories">
       {category === "search" && (
@@ -23,7 +27,6 @@ function Stories() {
       {stories.map((story) => {
         const { objectID, created_at, title, url, author } = story;
         const dateFormatted = moment(created_at).format("DD MMMM YYYY");
-
         return (
           <article key={objectID}>
             <a href={url} target="_blank" rel="noreferrer">
